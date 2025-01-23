@@ -1,0 +1,104 @@
+// Variables
+$primary-color: #2874f0; // Flipkart's primary blue
+$secondary-color: #ffffff; // White
+$border-color: #d0d0d0;
+$button-hover-color: #0056b3;
+$input-background: #f7f7f7;
+$error-color: #ff5252;
+
+// Global styles for Add Product component
+.add-product-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: $secondary-color;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+
+  .title {
+    color: $primary-color;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .add-product-form {
+    display: flex;
+    flex-direction: column;
+
+    .form-field {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: $primary-color;
+      }
+
+      .input,
+      .file-input {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        background-color: $input-background;
+        color: #333;
+        outline: none;
+        transition: border 0.3s;
+
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+
+      textarea.input {
+        resize: vertical;
+        min-height: 100px;
+      }
+    }
+
+    .image-preview,
+    .image-previews {
+      margin-top: 0.5rem;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        margin-right: 0.5rem;
+      }
+
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form-actions {
+      text-align: center;
+
+      .submit-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        color: $secondary-color;
+        background-color: $primary-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: $button-hover-color;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
