@@ -22,7 +22,7 @@
       align-items: center;
 
       .plus {
-        color: #ffd700; // Gold color
+        color: #ffd700; 
         font-weight: bold;
       }
     }
@@ -92,7 +92,7 @@
       &-content {
         display: none;
         position: absolute;
-        top: 100%; // Align dropdown just below the button
+        top: 100%; 
         left: 0;
         background-color: white;
         min-width: 150px;

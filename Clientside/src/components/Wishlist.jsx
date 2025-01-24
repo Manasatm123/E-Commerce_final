@@ -28,7 +28,7 @@ const Wishlist = () => {
       {wishlistItems.length > 0 ? (
         <div className="wishlist-grid">
           {wishlistItems.map((item) => (
-            <Link to={`/products/${item.productId}`} className="wishlist-item" key={item.productId}>
+            <Link to={`/productdetailspage/${item.productId}`} className="wishlist-item" key={item.productId}>
               <img src={item.thumbnail} alt={item.name} className="thumbnail" /> 
               <h3 className="name">{item.name}</h3> 
               <p className="price">{item.price}</p> 

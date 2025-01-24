@@ -2,7 +2,7 @@ import React from 'react';
 import './NavBar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({setName}) => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
@@ -24,6 +24,7 @@ const NavBar = () => {
           type="text"
           className="navbar__search-input"
           placeholder="Search for products, brands and more"
+          onChange={(e)=> setName(e.target.value)}
         />
         <button className="navbar__search-btn">
           <i className="fas fa-search">Search</i>

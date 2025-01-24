@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.scss";
 
-const Home = ({ name = "" }) => {
+const Home = ({ name}) => {
   const token = localStorage.getItem("token");
   const [products, setProducts] = useState([]);
 

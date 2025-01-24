@@ -1,8 +1,6 @@
-// Category.scss
-
 .category-page {
     padding: 20px;
-    background-color: #f1f3f6; // Flipkart-like light gray background
+    background-color: #f1f3f6; 
     font-family: Arial, sans-serif;
   
     h2 {
@@ -13,7 +11,7 @@
   
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // Responsive grid with a minimum width of 200px
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
       gap: 20px;
   
       .product-item {
