@@ -13,6 +13,11 @@ const ProductDetailsPage = () => {
   const [isInCart, setIsInCart] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
+  useEffect(()=>{
+  if (!token){
+    navigate('/login')
+  }})
+
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {

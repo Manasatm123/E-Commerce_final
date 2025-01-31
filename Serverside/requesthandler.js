@@ -67,6 +67,37 @@ export async function verifyEmail(req, res) {
     return res.status(500).send({ msg: "fields are empty" });
   }
   const user = await userSchema.findOne({ email });
+  if (user) {
+    return res.status(500).send({ msg: "email  exist" });
+  } else {
+    const info = await transporter.sendMail({
+      from: "Fcart@gmail.com",
+      to: email,
+      subject: "verify",
+      text: "VERIFY! your email",
+      html: `
+    <div class=" page" style="width: 500px; height: 300px; display: flex; 
+    align-items: center; justify-content: center; flex-direction: column;
+     background-color: gainsboro;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; ">
+        <h2>Email verification</h2>
+        <p>Click This Button to verify its you</p>
+        <a href="http://localhost:5173/signup"><button style="padding: 5px 15px; border: none; border-radius: 4px; 
+        background-color: white;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        font-size: 18px; color: red; font-style: italic;" >Verify</button></a>
+    </div>`,
+    });
+    console.log("Message sent: %s", info.messageId);
+    res.status(200).send({ msg: "Verificaton email sented" });
+  }
+}
+
+export async function forgotpwd(req, res) {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(500).send({ msg: "fields are empty" });
+  }
+  const user = await userSchema.findOne({ email });
   if (!user) {
     return res.status(500).send({ msg: "email not exist" });
   } else {
@@ -329,6 +360,26 @@ export async function getProductById(req, res) {
       .status(500)
       .send({
         msg: "Failed to fetch product. Please try again later.",
+        error: error.message,
+      });
+  }
+}
+
+export async function getAllProducts(req, res) {
+  try {
+    const products = await productSchema.find({});
+
+    if (!products || products.length === 0) {
+      return res.status(404).send({ msg: "No products found." });
+    }
+
+    res.status(200).send({ msg: "Products fetched successfully!", products });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    res
+      .status(500)
+      .send({
+        msg: "Failed to fetch products. Please try again later.",
         error: error.message,
       });
   }

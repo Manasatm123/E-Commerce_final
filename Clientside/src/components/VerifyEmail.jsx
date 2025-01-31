@@ -12,7 +12,7 @@ const VerifyEmail = () => {
     e.preventDefault()
     try {
       console.log(email)
-      const res=await axios.post("http://localhost:3003/api/forgotpwd",{email})
+      const res=await axios.post("http://localhost:3003/api/verifyEmail",{email})
       console.log(res)
       if (res.status==200) {
         alert(res.data.msg)

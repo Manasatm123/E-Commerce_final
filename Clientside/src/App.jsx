@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import ForgotPwd from "./components/ForgotPwd";
+import VerifyEmail from "./components/VerifyEmail";
 import Resetpwd from "./components/Resetpwd";
 import Profile from "./components/Profile";
 import Sellerprofile from "./components/Sellerprofile";
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home name={name}/>}/>
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/verifyemail" element={<VerifyEmail/>}/>
           <Route path="/login" element={<Login/>} />
           <Route path="/forgotpwd" element={<ForgotPwd/>}/>
           <Route path="/resetpwd" element={<Resetpwd/>}/>

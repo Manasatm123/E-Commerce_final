@@ -78,7 +78,7 @@ const LoginPage = () => {
 
       <p className="register-link">
         Don&apos;t have an account?{' '}
-        <a href="/signup" onClick={() => navigate('/signup')}>Sign Up</a>
+        <a href="/VerifyEmail" onClick={() => navigate('/VerifyEmail')}>Sign Up</a>
       </p>
     </div>
   );

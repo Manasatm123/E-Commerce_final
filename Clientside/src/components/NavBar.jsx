@@ -2,15 +2,14 @@ import React from 'react';
 import './NavBar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = ({setName}) => {
+const NavBar = ({ setName }) => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     alert('Successfully logged out!');
-    location.reload();
-    navigate("/");
+    navigate("/");  
   };
 
   return (
@@ -24,7 +23,7 @@ const NavBar = ({setName}) => {
           type="text"
           className="navbar__search-input"
           placeholder="Search for products, brands and more"
-          onChange={(e)=> setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <button className="navbar__search-btn">
           <i className="fas fa-search">Search</i>
@@ -33,7 +32,7 @@ const NavBar = ({setName}) => {
       <div className="navbar__menu">
         {token ? (
           <>
-            <div className=" dropdown">
+            <div className="dropdown">
               <button className="dropdown-btn">Account</button>
               <div className="dropdown-content">
                 <Link to="/Profile">Profile</Link>
@@ -56,4 +55,3 @@ const NavBar = ({setName}) => {
 };
 
 export default NavBar;
-

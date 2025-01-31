@@ -51,7 +51,7 @@ const Profile = () => {
       setAddresses(response.data.data);
     } catch (error) {
       console.error('Error fetching addresses:', error);
-      alert('Failed to fetch addresses.');
+      // alert('Failed to fetch addresses.');
     }
   };
 

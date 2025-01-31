@@ -7,7 +7,7 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
-    email: '',
+    email: localStorage.getItem('email'),
     phone: '',
     accType: '',
     pwd: '',
@@ -76,6 +76,7 @@ const RegisterPage = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={true}
           />
         </div>
 
